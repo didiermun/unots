@@ -5,7 +5,7 @@ const config = {
 		extend: {},
 		fontFamily: {
 			primary: ['Montserrat', 'sans-serif'],
-			secondary: ['Lato', 'sans-serif'],
+			secondary: ['Libre Franklin', 'sans-serif'],
 		}
 	},
 

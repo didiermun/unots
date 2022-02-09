@@ -2,9 +2,63 @@
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-0 main-card transition-all bg-white shadow-md">
         <div class="col-span-2 rounded-xl flex items-center justify-center mx-auto">
             <div class="w-full py-10">
-                <h1 class="uk-heading-small font-primary">Welcome back</h1>
-                <p class="text-xl text-center text-gray-500 font-secondary">Please login to your account</p>
+                <h1 class="uk-heading-small font-primary">Welcome friend!</h1>
+                <p class="text-xl text-center text-gray-500 font-secondary">Please create your own account</p>
                 <div class="uk-margin">
+                    <div class="mb-3 w-full font-primary">
+                        <label for="lastName" class="form-label inline-block mb-2 text-gray-700 font-semibold"
+                          >First Name</label
+                        >
+                        <input
+                          type="text"
+                          class="
+                            form-control
+                            block
+                            w-full
+                            px-3
+                            py-2
+                            text-lg
+                            font-normal
+                            text-gray-700
+                            bg-white bg-clip-padding
+                            border-big border-gray-300
+                            rounded
+                            transition
+                            ease-in-out
+                            font-primary
+                            m-0
+                            focus:text-gray-700 focus:bg-white focus:border-gray-800 focus:outline-none
+                          "
+                          placeholder="Ex: Didier"
+                        />
+                    </div>
+                    <div class="mb-3 w-full font-primary">
+                        <label for="lastName" class="form-label inline-block mb-2 text-gray-700 font-semibold"
+                          >Last Name</label
+                        >
+                        <input
+                          type="text"
+                          class="
+                            form-control
+                            block
+                            w-full
+                            px-3
+                            py-2
+                            text-lg
+                            font-normal
+                            text-gray-700
+                            bg-white bg-clip-padding
+                            border-big border-gray-300
+                            rounded
+                            transition
+                            ease-in-out
+                            font-primary
+                            m-0
+                            focus:text-gray-700 focus:bg-white focus:border-gray-800 focus:outline-none
+                          "
+                          placeholder="Ex: Chummy"
+                        />
+                    </div>
                     <div class="mb-3 w-full font-primary">
                         <label for="email" class="form-label inline-block mb-2 text-gray-700 font-semibold"
                           >Email</label
@@ -59,19 +113,14 @@
                           placeholder="********"
                         />
                     </div>
-                    <div class="w-full px-3 pb-4">
-                        <div class="flex w-max float-right">
-                            <p class=" font-secondary font-bold hover:underline cursor-pointer text-black text-lg">Forgot Password</p>
-                        </div>
-                    </div>
                     <div class="flex space-x-2 justify-center w-full mt-6">
-                        <button type="button" class="w-full font-primary inline-block px-6 py-2.5 bg-black text-white font-medium text-lg leading-tight rounded shadow-md hover:bg-black hover:shadow-lg focus:bg-black focus:shadow-lg focus:outline-none focus:ring-0 active:bg-black active:shadow-lg transition duration-300 ease-in-out">Sign in</button>
+                        <button type="button" class="w-full font-primary inline-block px-6 py-2.5 bg-black text-white font-medium text-lg leading-tight rounded shadow-md hover:bg-black hover:shadow-lg focus:bg-black focus:shadow-lg focus:outline-none focus:ring-0 active:bg-black active:shadow-lg transition duration-300 ease-in-out">Sign up</button>
                     </div>
 
                     <div class="w-full px-3 py-4">
                             <p class="text-center">
-                                <span class=" font-secondary font-semibold text-gray-500 text-lg">Don't have account?</span>
-                                <span class=" font-secondary font-bold  cursor-pointer text-black text-lg">Sign up here</span>
+                                <span class=" font-secondary font-semibold text-gray-500 text-lg">Have account already?</span>
+                                <span class=" font-secondary font-bold  cursor-pointer text-black text-lg">Sign in here</span>
                             </p>
                     </div>
                     
