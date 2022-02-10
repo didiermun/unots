@@ -129,7 +129,7 @@
         </div>
         <div class="col-span-2 rounded-xl uk-inline h-full">
             <img src="https://th.bing.com/th/id/R.8e1efc22a3c2227909d92f6b03ce021b?rik=Zde8ZEGr%2flb97g&pid=ImgRaw&r=0" alt="" class="h-full w-full object-cover">
-            <div class="uk-overlay uk-light uk-position-bottom text-center glass mx-4 my-6 md:mb-20">
+            <div class="uk-overlay uk-light uk-position-bottom text-center glass mx-4 my-6 md:mb-16">
                 <div class="gap-2 flex flex-col">
                     <p class="text-sm font-primary text-white text-center font-semibold">"I like using notebook app, happy to be having all my alls set in place."</p>
                     <div class="flex flex-col w-max float-left font-secondary gap-2">
@@ -163,6 +163,6 @@
         -webkit-backdrop-filter: blur(6px) saturate(0%);
         background-color: rgba(255, 255, 255, 0.75);
         border-radius: 12px;
-        border: 4px solid #fff;
+        border: 2px solid #fff;
     }
 </style>
