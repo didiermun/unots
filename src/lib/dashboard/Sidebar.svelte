@@ -75,7 +75,13 @@
         </div>
     </div>
 </div>
-    <div class="">
+    <div class="flex flex-col gap-4 mb-6">
+        <div class="px-3 py-5 bg-white flex cursor-pointer">
+            <div class="flex gap-3">
+                <img src="/svg/dashboard/add.svg" alt="">
+                <p class="text-xl font-primary font-semibold text-black">Add New folder</p>
+            </div>
+        </div>
         <div class="px-3 py-5 bg-white flex cursor-pointer">
             <div class="flex gap-3">
                 <img src="/svg/dashboard/settings.svg" alt="">

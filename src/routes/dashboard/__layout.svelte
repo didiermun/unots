@@ -5,23 +5,7 @@
     <div class="col-span-2 h-full">
         <Sidebar />
     </div>
-    <div class="col-span-2 bg-white">
-        <div class="container mx-auto px-4 py-8">
-            <h1 class="text-2xl font-bold">Dashboard</h1>
-            <p class="text-gray-600">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptatum, quisquam.
-            </p>
-        </div>
+    <div class="col-span-10 bg-white px-4">
+        <slot />
     </div>
-    <div class="col-span-4 bg-white">
-        <div class="container mx-auto px-4 py-8">
-            <h1 class="text-2xl font-bold">Dashboard</h1>
-            <p class="text-gray-600">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptatum, quisquam.
-            </p>
-        </div>
-    </div>
-
 </div>
