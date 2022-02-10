@@ -3,7 +3,7 @@
         <div class="col-span-2 rounded-xl flex items-center justify-center mx-auto">
             <div class="w-full py-10">
                 <h1 class="uk-heading-small font-primary">Welcome back</h1>
-                <p class="text-xl text-center text-gray-500 font-secondary">Please login to your account</p>
+                <p class="text-lg text-center text-gray-500 font-secondary">Please login to your account</p>
                 <div class="uk-margin">
                     <div class="mb-3 w-full font-primary">
                         <label for="email" class="form-label inline-block mb-2 text-gray-700 font-semibold"
@@ -16,8 +16,8 @@
                             block
                             w-full
                             px-3
-                            py-2
-                            text-lg
+                            py-1.5
+                            text-md
                             font-normal
                             text-gray-700
                             bg-white bg-clip-padding
@@ -43,8 +43,8 @@
                             block
                             w-full
                             px-3
-                            py-2
-                            text-lg
+                            py-1.5
+                            text-md
                             font-normal
                             text-gray-700
                             bg-white bg-clip-padding
@@ -61,32 +61,32 @@
                     </div>
                     <div class="w-full px-3 pb-4">
                         <div class="flex w-max float-right">
-                            <p class=" font-secondary font-bold hover:underline cursor-pointer text-black text-lg">Forgot Password</p>
+                            <p class=" font-secondary font-bold hover:underline cursor-pointer text-black text-md">Forgot Password</p>
                         </div>
                     </div>
                     <div class="flex space-x-2 justify-center w-full mt-6">
-                        <button type="button" class="w-full font-primary inline-block px-6 py-2.5 bg-black text-white font-medium text-lg leading-tight rounded shadow-md hover:bg-black hover:shadow-lg focus:bg-black focus:shadow-lg focus:outline-none focus:ring-0 active:bg-black active:shadow-lg transition duration-300 ease-in-out">Sign in</button>
+                        <button type="button" class="w-full font-primary inline-block px-6 py-2 bg-black text-white font-medium text-md leading-tight rounded shadow-md hover:bg-black hover:shadow-lg focus:bg-black focus:shadow-lg focus:outline-none focus:ring-0 active:bg-black active:shadow-lg transition duration-300 ease-in-out">Sign in</button>
                     </div>
 
                     <div class="w-full px-3 py-4">
                             <p class="text-center">
-                                <span class=" font-secondary font-semibold text-gray-500 text-lg">Don't have account?</span>
-                                <span class=" font-secondary font-bold  cursor-pointer text-black text-lg">Sign up here</span>
+                                <span class=" font-secondary font-semibold text-gray-500 text-md">Don't have account?</span>
+                                <span class=" font-secondary font-bold  cursor-pointer text-black text-md">Sign up here</span>
                             </p>
                     </div>
                     
                 </div>
             </div>
         </div>
-        <div class="col-span-2 rounded-xl uk-inline h-full">
+        <div class="col-span-2 rounded uk-inline h-full">
             <img src="https://th.bing.com/th/id/R.8e1efc22a3c2227909d92f6b03ce021b?rik=Zde8ZEGr%2flb97g&pid=ImgRaw&r=0" alt="" class="h-full w-full object-cover">
             <div class="uk-overlay uk-light uk-position-bottom text-center glass mx-4 my-6">
                 <div class="gap-2 flex flex-col">
-                    <p class="text-2xl font-primary text-white text-center font-semibold">"I like using notebook app, happy to be having all my alls set in place."</p>
+                    <p class="text-sm font-primary text-white text-center font-semibold">"I like using notebook app, happy to be having all my alls set in place."</p>
                     <div class="flex flex-col w-max float-left font-secondary gap-2">
-                        <p class="text-3xl font-bold text-white">Didier Chummy</p>
-                        <p class="text-xl text-white font-semibold">Founder of GOP parks</p>
-                        <p class="text-lg text-white">Unotiz User</p>
+                        <p class="text-lg font-bold text-white">Didier Chummy</p>
+                        <p class=" text-white font-semibold text-sm">Founder of GOP parks</p>
+                        <p class="text-md text-white text-xs">Unotiz User</p>
                     </div>
                 </div>
             </div>
@@ -96,8 +96,8 @@
 
 <style>
     .main-card {
-        height: 800px;
-        width: 1400px;
+        height: 600px;
+        width: 1200px;
         border-radius: 20px;
     }
 
@@ -114,6 +114,6 @@
         -webkit-backdrop-filter: blur(6px) saturate(0%);
         background-color: rgba(255, 255, 255, 0.75);
         border-radius: 12px;
-        border: 4px solid #fff;
+        border: 2px solid #fff;
     }
 </style>

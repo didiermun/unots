@@ -1,10 +1,10 @@
 <div class="w-full bg-gray-50 flex flex-col justify-between h-full px-4 py-3 pt-5">
     <div>
     <div class="flex flex-col gap-6 mb-10">
-        <div class="bg-white py-5 px-2 flex gap-2 rounded cursor-pointer">
+        <div class="bg-white py-2 px-2 flex gap-2 rounded cursor-pointer">
             <img class="w-10 h-10 rounded-full object-cover" src="https://pbs.twimg.com/profile_images/1490769258271453184/jzkdIjWd_400x400.jpg" alt="">
             <div class="py-2 font-secondary flex gap-1">
-                <p class="font-semibold text-black">Didier Chummy</p>
+                <p class="font-semibold text-black text-md">Didier Chummy</p>
                 <img src="/svg/dashboard/drop.svg" class="py-1" alt="">
             </div>
         </div>
@@ -20,54 +20,54 @@
                         </svg>
                         
                     </button>
-                    <input type="text" class="font-secondary px-4 py-4 w-full focus:outline-none text-lg" placeholder="Search...">
+                    <input type="text" class="font-secondary px-4 py-4 w-full focus:outline-none text-md" placeholder="Search...">
                 </div>
             </div>
         </div>
     </div>
-    <div class="flex flex-col gap-3">
-        <div class="px-3 py-5 bg-white flex justify-between cursor-pointer">
+    <div class="flex flex-col gap-2">
+        <div class="px-3 py-2 bg-white flex justify-between cursor-pointer">
             <div class="flex gap-3">
                 <img src="/svg/dashboard/notes.svg" alt="">
-                <p class="text-xl font-primary font-semibold text-black">Notes</p>
+                <p class="text-md font-primary font-semibold text-black">Notes</p>
             </div>
             <div class="px-3">
                 <img src="/svg/dashboard/more.svg" alt="">                 
             </div>
         </div>
-        <div class="px-3 py-5 bg-white flex justify-between cursor-pointer">
+        <div class="px-3 py-2 bg-white flex justify-between cursor-pointer">
             <div class="flex gap-3">
                 <img src="/svg/dashboard/todos.svg" alt="">   
                     
-                <p class="text-xl font-primary font-semibold text-black">Todos</p>
+                <p class="text-md font-primary font-semibold text-black">Todos</p>
             </div>
             <div class="px-3">
                 <img src="/svg/dashboard/more.svg" alt="">                      
             </div>
         </div>
-        <div class="px-3 py-5 bg-white flex justify-between cursor-pointer">
+        <div class="px-3 py-2 bg-white flex justify-between cursor-pointer">
             <div class="flex gap-3">
                 <img src="/svg/dashboard/project.svg" alt="">
-                <p class="text-xl font-primary font-semibold text-black">Projects</p>
+                <p class="text-md font-primary font-semibold text-black">Projects</p>
             </div>
             <div class="px-3">
                 <img src="/svg/dashboard/more.svg" alt="">                 
             </div>
         </div>
-        <div class="px-3 py-5 bg-white flex justify-between cursor-pointer">
+        <div class="px-3 py-2 bg-white flex justify-between cursor-pointer">
             <div class="flex gap-3">
                 <img src="/svg/dashboard/edit.svg" alt="">   
                     
-                <p class="text-xl font-primary font-semibold text-black">Journal</p>
+                <p class="text-md font-primary font-semibold text-black">Journal</p>
             </div>
             <div class="px-3">
                 <img src="/svg/dashboard/more.svg" alt="">                      
             </div>
         </div>
-        <div class="px-3 py-5 bg-white flex justify-between cursor-pointer">
+        <div class="px-3 py-2 bg-white flex justify-between cursor-pointer">
             <div class="flex gap-3">
                 <img src="/svg/dashboard/list.svg" alt="">
-                <p class="text-xl font-primary font-semibold text-black">Reading List</p>
+                <p class="text-md font-primary font-semibold text-black">Reading List</p>
             </div>
             <div class="px-3">
                 <img src="/svg/dashboard/more.svg" alt="">                 
@@ -75,17 +75,17 @@
         </div>
     </div>
 </div>
-    <div class="flex flex-col gap-4 mb-6">
-        <div class="px-3 py-5 bg-white flex cursor-pointer">
+    <div class="flex flex-col gap-3 mb-6">
+        <div class="px-3 py-2 bg-white flex cursor-pointer">
             <div class="flex gap-3">
                 <img src="/svg/dashboard/add.svg" alt="">
-                <p class="text-xl font-primary font-semibold text-black">Add New folder</p>
+                <p class="text-md font-primary font-semibold text-black">Add New folder</p>
             </div>
         </div>
-        <div class="px-3 py-5 bg-white flex cursor-pointer">
+        <div class="px-3 py-2 bg-white flex cursor-pointer">
             <div class="flex gap-3">
                 <img src="/svg/dashboard/settings.svg" alt="">
-                <p class="text-xl font-primary font-semibold text-black">Settings</p>
+                <p class="text-md font-primary font-semibold text-black">Settings</p>
             </div>
         </div>
     </div>
