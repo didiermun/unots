@@ -1,16 +1,44 @@
+<script>
+  let formData = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+  }
+
+  async function submitData(){
+    console.log(formData);
+    const rawResponse = await fetch(
+        "https://unots.herokuapp.com/api/signup",
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        },
+      );
+      const content = await rawResponse.json();
+      console.log(content);
+  }
+</script>
+
 <div class="bg-[#f7fafc] h-screen w-screen flex mx-auto items-center justify-center">
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-0 main-card transition-all bg-white shadow-md">
         <div class="col-span-2 rounded-xl flex items-center justify-center mx-auto">
             <div class="w-full py-10">
                 <h1 class="font-primary">Welcome friend!</h1>
                 <p class="text-lg text-center text-gray-500 font-secondary">Please create your own account</p>
-                <div class="uk-margin">
+                <form on:submit|preventDefault={submitData} class="uk-margin">
                     <div class="mb-3 w-full font-primary">
                         <label for="lastName" class="form-label inline-block mb-2 text-gray-700 font-semibold"
                           >First Name</label
                         >
                         <input
                           type="text"
+                          bind:value={formData.firstName}
+                          required
                           class="
                             form-control
                             block
@@ -38,6 +66,8 @@
                         >
                         <input
                           type="text"
+                          required
+                          bind:value={formData.lastName}
                           class="
                             form-control
                             block
@@ -65,6 +95,8 @@
                         >
                         <input
                           type="email"
+                          required
+                          bind:value={formData.email}
                           class="
                             form-control
                             block
@@ -92,6 +124,8 @@
                         >
                         <input
                           type="password"
+                          required
+                          bind:value={formData.password}
                           class="
                             form-control
                             block
@@ -114,7 +148,7 @@
                         />
                     </div>
                     <div class="flex space-x-2 justify-center w-full mt-6">
-                        <button type="button" class="w-full font-primary inline-block px-6 py-2 bg-black text-white font-medium text-md leading-tight rounded shadow-md hover:bg-black hover:shadow-lg focus:bg-black focus:shadow-lg focus:outline-none focus:ring-0 active:bg-black active:shadow-lg transition duration-300 ease-in-out">Sign up</button>
+                        <button type="submit" class="w-full font-primary inline-block px-6 py-2 bg-black text-white font-medium text-md leading-tight rounded shadow-md hover:bg-black hover:shadow-lg focus:bg-black focus:shadow-lg focus:outline-none focus:ring-0 active:bg-black active:shadow-lg transition duration-300 ease-in-out">Sign up</button>
                     </div>
 
                     <div class="w-full px-3 py-4">
@@ -124,7 +158,7 @@
                             </p>
                     </div>
                     
-                </div>
+                </form>
             </div>
         </div>
         <div class="col-span-2 rounded-xl uk-inline h-full">

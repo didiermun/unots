@@ -1,16 +1,43 @@
+<script>
+    let formData = {
+    email: '',
+    password: '',
+  }
+
+  async function submitData(){
+    console.log(formData);
+    const rawResponse = await fetch(
+        "https://unots.herokuapp.com/api/login",
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        },
+      );
+      const content = await rawResponse.json();
+      console.log(content);
+  }
+</script>
+
+
 <div class="bg-[#f7fafc] h-screen w-screen flex mx-auto items-center justify-center">
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-0 main-card transition-all bg-white shadow-md">
         <div class="col-span-2 rounded-xl flex items-center justify-center mx-auto">
             <div class="w-full py-10">
                 <h1 class="uk-heading-small font-primary">Welcome back</h1>
                 <p class="text-lg text-center text-gray-500 font-secondary">Please login to your account</p>
-                <div class="uk-margin">
+                <form on:submit|preventDefault={submitData} class="uk-margin">
                     <div class="mb-3 w-full font-primary">
                         <label for="email" class="form-label inline-block mb-2 text-gray-700 font-semibold"
                           >Email</label
                         >
                         <input
                           type="email"
+                          bind:value={formData.email}
+                          required
                           class="
                             form-control
                             block
@@ -38,6 +65,8 @@
                         >
                         <input
                           type="password"
+                          bind:value={formData.password}
+                          required
                           class="
                             form-control
                             block
@@ -75,7 +104,7 @@
                             </p>
                     </div>
                     
-                </div>
+                </form>
             </div>
         </div>
         <div class="col-span-2 rounded uk-inline h-full">
