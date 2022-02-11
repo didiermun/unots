@@ -1,5 +1,4 @@
 <script>
-import { toasts }  from "svelte-toasts";
 import { errorToast, successToast } from "$lib/toastify";
 import { updateUser } from "$lib/store/currentUser";
 import {goSignup} from "$lib/goto/index"
