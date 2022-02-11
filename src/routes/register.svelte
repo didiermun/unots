@@ -1,4 +1,10 @@
 <script>
+import { goto } from "$app/navigation";
+
+import { errorToast, successToast } from "$lib/toastify";
+import {goSignin} from "$lib/goto/index"
+
+
   let formData = {
     firstName: '',
     lastName: '',
@@ -7,7 +13,6 @@
   }
 
   async function submitData(){
-    console.log(formData);
     const rawResponse = await fetch(
         "https://unots.herokuapp.com/api/signup",
         {
@@ -20,7 +25,13 @@
         },
       );
       const content = await rawResponse.json();
-      console.log(content);
+      if(content.error){
+            errorToast(content.error.details)
+        }
+        else{
+            successToast('Registration successful')
+            goto('/signin');
+        }
   }
 </script>
 
@@ -154,7 +165,7 @@
                     <div class="w-full px-3 py-4">
                             <p class="text-center">
                                 <span class=" font-secondary font-semibold text-gray-500 text-md">Have account already?</span>
-                                <span class="font-secondary font-bold  cursor-pointer text-black text-md">Sign in here</span>
+                                <span class="font-secondary font-bold  cursor-pointer text-black text-md" on:click={goSignin}>Sign in here</span>
                             </p>
                     </div>
                     

@@ -1,11 +1,16 @@
 <script>
+import { toasts }  from "svelte-toasts";
+import { errorToast, successToast } from "$lib/toastify";
+import { updateUser } from "$lib/store/currentUser";
+import {goSignup} from "$lib/goto/index"
+import { goto } from '$app/navigation';
+
     let formData = {
     email: '',
     password: '',
   }
 
   async function submitData(){
-    console.log(formData);
     const rawResponse = await fetch(
         "https://unots.herokuapp.com/api/login",
         {
@@ -16,9 +21,22 @@
           },
           body: JSON.stringify(formData),
         },
-      );
-      const content = await rawResponse.json();
-      console.log(content);
+        );
+        const content = await rawResponse.json();
+        if(content.error){
+            errorToast(content.error.details)
+        }
+        else{
+            successToast('Sign in successful')
+            console.log(content)
+            localStorage.setItem('token', content.token);
+            localStorage.setItem('user', JSON.stringify(content));
+            updateUser(content)
+            // currentUser.update(user=>
+            //     content
+            // )
+            goto('/dashboard/notes');
+        }
   }
 </script>
 
@@ -94,13 +112,13 @@
                         </div>
                     </div>
                     <div class="flex space-x-2 justify-center w-full mt-6">
-                        <button type="button" class="w-full font-primary inline-block px-6 py-2 bg-black text-white font-medium text-md leading-tight rounded shadow-md hover:bg-black hover:shadow-lg focus:bg-black focus:shadow-lg focus:outline-none focus:ring-0 active:bg-black active:shadow-lg transition duration-300 ease-in-out">Sign in</button>
+                        <button type="submit" class="w-full font-primary inline-block px-6 py-2 bg-black text-white font-medium text-md leading-tight rounded shadow-md hover:bg-black hover:shadow-lg focus:bg-black focus:shadow-lg focus:outline-none focus:ring-0 active:bg-black active:shadow-lg transition duration-300 ease-in-out">Sign in</button>
                     </div>
 
                     <div class="w-full px-3 py-4">
                             <p class="text-center">
                                 <span class=" font-secondary font-semibold text-gray-500 text-md">Don't have account?</span>
-                                <span class=" font-secondary font-bold  cursor-pointer text-black text-md">Sign up here</span>
+                                <span class=" font-secondary font-bold  cursor-pointer text-black text-md" on:click={goSignup}>Sign up here</span>
                             </p>
                     </div>
                     
@@ -122,7 +140,6 @@
         </div>
     </div>
 </div>
-
 <style>
     .main-card {
         height: 600px;

@@ -1,10 +1,21 @@
+<script>
+import { currentUser } from "$lib/store/currentUser";
+
+
+    let user;
+
+    currentUser.subscribe(newUser=>{
+        user = newUser;
+    })
+</script>
+
 <div class="w-full bg-gray-50 flex flex-col justify-between h-full px-4 py-3 pt-5">
     <div>
     <div class="flex flex-col gap-6 mb-10">
         <div class="bg-white py-2 px-2 flex gap-2 rounded cursor-pointer">
             <img class="w-10 h-10 rounded-full object-cover" src="https://pbs.twimg.com/profile_images/1490769258271453184/jzkdIjWd_400x400.jpg" alt="">
             <div class="py-2 font-secondary flex gap-1">
-                <p class="font-semibold text-black text-md">Didier Chummy</p>
+                <p class="font-semibold text-black text-md">{user?.firstName.concat(user?.lastName).length < 15 ? user?.firstName+' '+user?.lastName : user?.firstName}</p>
                 <img src="/svg/dashboard/drop.svg" class="py-1" alt="">
             </div>
         </div>

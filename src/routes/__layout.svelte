@@ -1,19 +1,11 @@
 <script lang="ts">
-	import Header from '$lib/header/Header.svelte';
 	import '../app.css';
+	import { ToastContainer, FlatToast }  from "svelte-toasts";
+	import { SvelteToast } from '@zerodevx/svelte-toast'
 </script>
 
-<!-- <Header>
-	<main>
-		<slot />
-	</main>
-
-	<footer>
-		
-	</footer>
-
-	<style>
-		
-	</style>
-</Header> -->
 <slot />
+<ToastContainer let:data={data}>
+    <FlatToast {data}  />
+</ToastContainer>
+<SvelteToast/>
