@@ -4,7 +4,4 @@
 </script>
 
 <slot />
-<ToastContainer let:data={data}>
-    <FlatToast {data}  />
-</ToastContainer>
 <SvelteToast/>
