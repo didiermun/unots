@@ -1,5 +1,7 @@
 <script>
 import { currentUser } from "$lib/store/currentUser";
+import {goto} from '$app/navigation'
+import { page } from '$app/stores';
 
 
     let user;
@@ -7,6 +9,12 @@ import { currentUser } from "$lib/store/currentUser";
     currentUser.subscribe(newUser=>{
         user = newUser;
     })
+
+let url = $page.url.pathname;
+page.subscribe(newPage=>{
+    url = newPage.url.pathname;
+})
+console.log(url);
 </script>
 
 <div class="w-full bg-gray-50 flex flex-col justify-between h-full px-4 py-3 pt-5">
@@ -37,7 +45,7 @@ import { currentUser } from "$lib/store/currentUser";
         </div>
     </div>
     <div class="flex flex-col gap-2">
-        <div class="px-3 py-2 bg-white flex justify-between cursor-pointer">
+        <div class={`px-3 py-2 flex cursor-pointer ${url == "/dashboard/notes" ? "bg-white" :""}`} on:click={()=>{goto("/dashboard/notes")}}>
             <div class="flex gap-3">
                 <img src="/svg/dashboard/notes.svg" alt="">
                 <p class="text-md font-primary font-semibold text-black">Notes</p>
@@ -46,7 +54,7 @@ import { currentUser } from "$lib/store/currentUser";
                 <img src="/svg/dashboard/more.svg" alt="">                 
             </div>
         </div>
-        <div class="px-3 py-2 bg-white flex justify-between cursor-pointer">
+        <div class={`px-3 py-2 flex cursor-pointer ${url == "/dashboard/todos" ? "bg-white" :""}`} on:click={()=>{goto("/dashboard/todos")}}>
             <div class="flex gap-3">
                 <img src="/svg/dashboard/todos.svg" alt="">   
                     
@@ -56,7 +64,7 @@ import { currentUser } from "$lib/store/currentUser";
                 <img src="/svg/dashboard/more.svg" alt="">                      
             </div>
         </div>
-        <div class="px-3 py-2 bg-white flex justify-between cursor-pointer">
+        <div class={`px-3 py-2 flex cursor-pointer ${url == "/dashboard/projects" ? "bg-white" :""}`} on:click={()=>{goto("/dashboard/projects")}}>
             <div class="flex gap-3">
                 <img src="/svg/dashboard/project.svg" alt="">
                 <p class="text-md font-primary font-semibold text-black">Projects</p>
@@ -65,17 +73,17 @@ import { currentUser } from "$lib/store/currentUser";
                 <img src="/svg/dashboard/more.svg" alt="">                 
             </div>
         </div>
-        <div class="px-3 py-2 bg-white flex justify-between cursor-pointer">
+        <div class={`px-3 py-2 flex cursor-pointer ${url == "/dashboard/journals" ? "bg-white" :""}`} on:click={()=>{goto("/dashboard/journals")}}>
             <div class="flex gap-3">
                 <img src="/svg/dashboard/edit.svg" alt="">   
                     
-                <p class="text-md font-primary font-semibold text-black">Journal</p>
+                <p class="text-md font-primary font-semibold text-black">Journals</p>
             </div>
             <div class="px-3">
                 <img src="/svg/dashboard/more.svg" alt="">                      
             </div>
         </div>
-        <div class="px-3 py-2 bg-white flex justify-between cursor-pointer">
+        <div class={`px-3 py-2 flex cursor-pointer ${url == "/dashboard/list" ? "bg-white" :""}`} on:click={()=>{goto("/dashboard/list")}}>
             <div class="flex gap-3">
                 <img src="/svg/dashboard/list.svg" alt="">
                 <p class="text-md font-primary font-semibold text-black">Reading List</p>
@@ -87,16 +95,16 @@ import { currentUser } from "$lib/store/currentUser";
     </div>
 </div>
     <div class="flex flex-col gap-3 mb-6">
-        <div class="px-3 py-2 bg-white flex cursor-pointer">
+        <div class={`px-3 py-2 flex cursor-pointer ${url == "/dashboard/new" ? "bg-white" :""}`} on:click={()=>{goto("/dashboard/new")}}>
             <div class="flex gap-3">
                 <img src="/svg/dashboard/add.svg" alt="">
                 <p class="text-md font-primary font-semibold text-black">Add New folder</p>
             </div>
         </div>
-        <div class="px-3 py-2 bg-white flex cursor-pointer">
+        <div class={`px-3 py-2 flex cursor-pointer ${url == "/dashboard/profile" ? "bg-white" :""}`}>
             <div class="flex gap-3">
                 <img src="/svg/dashboard/settings.svg" alt="">
-                <p class="text-md font-primary font-semibold text-black">Settings</p>
+                <p class="text-md font-primary font-semibold text-black" on:click={()=>{goto("/dashboard/profile")}}>Settings</p>
             </div>
         </div>
     </div>
