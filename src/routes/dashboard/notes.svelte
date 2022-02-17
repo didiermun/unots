@@ -2,12 +2,13 @@
     import NoteCard from "$lib/dashboard/NoteCard.svelte";
     import NoteDetails from "$lib/dashboard/NoteDetails.svelte";
     import { page } from '$app/stores';
-    let params = $page.url.searchParams.get('id');
     import { currentUser } from '$lib/store/currentUser';
     import { errorToast } from '$lib/toastify';
+    import { goto } from "$app/navigation";
 
     let token = $currentUser?.token;
     let currentNote;
+    let redirect = 0;
 
     let allNotes = [];
 
@@ -31,6 +32,10 @@
 		const content = await res.json();
         if(content.error){
             errorToast(content.error.details);
+            if(content.error.code == 401 ){
+                // goto("/signin");
+                redirect = 1;
+            }
             return;
         }
 		else{
@@ -41,6 +46,9 @@
 		} 
 	}
 
+    if(typeof window !== 'undefined' && redirect === 1){
+        goto("/signin");
+    }
     let notes = getNotes();
 
 </script>
@@ -52,7 +60,7 @@
             <div class="px-3 py-2 bg-gray-100 flex cursor-pointer rounded-lg">
                 <div class="flex gap-3">
                     <img src="/svg/dashboard/add.svg" alt="">
-                    <p class="font-primary font-semibold text-black text-sm">Add new note</p>
+                    <p class="font-primary font-semibold text-black text-sm" on:click={()=>{goto("/dashboard/notes/new")}}>Add new note</p>
                 </div>
             </div>
             <div class="flex flex-col gap-3">

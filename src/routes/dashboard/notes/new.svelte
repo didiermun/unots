@@ -1,7 +1,6 @@
 <script>
     import NoteCard from "$lib/dashboard/NoteCard.svelte";
     import { page } from '$app/stores';
-    let params = $page.url.searchParams.get('id');
     import { currentUser } from '$lib/store/currentUser';
     import { errorToast } from '$lib/toastify';
     import NewNote from "$lib/dashboard/NewNote.svelte";

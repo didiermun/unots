@@ -1,8 +1,7 @@
 <script>
-import { currentUser } from "$lib/store/currentUser";
-import {goto} from '$app/navigation'
-import { page } from '$app/stores';
-
+    import { currentUser } from "$lib/store/currentUser";
+    import {goto} from '$app/navigation'
+    import { page } from '$app/stores';
 
     let user;
 
@@ -10,11 +9,11 @@ import { page } from '$app/stores';
         user = newUser;
     })
 
-let url = $page.url.pathname;
-page.subscribe(newPage=>{
-    url = newPage.url.pathname;
-})
-console.log(url);
+    let url = $page?.url?.pathname;
+    page.subscribe(newPage=>{
+        url = newPage?.url?.pathname;
+    })
+    console.log(url);
 </script>
 
 <div class="w-full bg-gray-50 flex flex-col justify-between h-full px-4 py-3 pt-5">
@@ -23,7 +22,7 @@ console.log(url);
         <div class="bg-white py-2 px-2 flex gap-2 rounded cursor-pointer">
             <img class="w-10 h-10 rounded-full object-cover" src="https://pbs.twimg.com/profile_images/1490769258271453184/jzkdIjWd_400x400.jpg" alt="">
             <div class="py-2 font-secondary flex gap-1">
-                <p class="font-semibold text-black text-md">{user?.firstName.concat(user?.lastName).length < 15 ? user?.firstName+' '+user?.lastName : user?.firstName}</p>
+                <p class="font-semibold text-black text-md">{user?.firstName?.concat(user?.lastName).length < 15 ? user?.firstName+' '+user?.lastName : user?.firstName}</p>
                 <img src="/svg/dashboard/drop.svg" class="py-1" alt="">
             </div>
         </div>
