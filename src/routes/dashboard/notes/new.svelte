@@ -1,47 +1,40 @@
 <script>
     import NoteCard from "$lib/dashboard/NoteCard.svelte";
-    import NoteDetails from "$lib/dashboard/NoteDetails.svelte";
     import { page } from '$app/stores';
     let params = $page.url.searchParams.get('id');
     import { currentUser } from '$lib/store/currentUser';
     import { errorToast } from '$lib/toastify';
+    import NewNote from "$lib/dashboard/NewNote.svelte";
 
     let token = $currentUser?.token;
-    let currentNote;
 
-    let allNotes = [];
+let allNotes = [];
 
-    currentUser.subscribe(newUser=>{
-        token = newUser?.token;
-    })
+currentUser.subscribe(newUser=>{
+    token = newUser?.token;
+})
 
-    function updateCurrent(note){
-        console.log(note);
-        currentNote = note;
+async function getNotes() {
+    const res = await fetch(`https://unots.herokuapp.com/api/notes`, {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
     }
+});
+    const content = await res.json();
+    if(content.error){
+        errorToast(content.error.details);
+        return;
+    }
+    else{
+        allNotes = content;
+        console.log(content);
+        return content
+    } 
+}
 
-    async function getNotes() {
-		const res = await fetch(`https://unots.herokuapp.com/api/notes`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-        }
-    });
-		const content = await res.json();
-        if(content.error){
-            errorToast(content.error.details);
-            return;
-        }
-		else{
-            allNotes = content;
-            currentNote = allNotes[0];
-			console.log(content);
-            return content
-		} 
-	}
-
-    let notes = getNotes();
+let notes = getNotes();
 
 </script>
 
@@ -57,15 +50,13 @@
             </div>
             <div class="flex flex-col gap-3">
                 {#each allNotes as note} 
-                <div on:click={()=>{updateCurrent(note)}}>
-                <NoteCard  note={note} />
-                </div>
+                <NoteCard note={note} />
                 {/each}
             </div>
         </div>
     </div>
     <div class="col-span-8 px-6 py-4 bg-white full-screen overflow-y-auto pr-4">
-        <NoteDetails bind:note={currentNote} />
+        <NewNote />
     </div>
 </div>
 

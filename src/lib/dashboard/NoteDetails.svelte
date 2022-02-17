@@ -1,21 +1,19 @@
 <script>
-// @ts-nocheck
-
-    import Editor from 'cl-editor';
+    export let note;
 </script>
 <div class="px-2 py-2">
     <div class="pb-2 border-b-2 w-full flex justify-between">
         <div class="flex gap-2 cursor-pointer">
         <p class="font-semibold font-secondary text-black">Notes</p>
         <img src="/svg/dashboard/right.svg" alt="not" class="h-4 w-4 my-1">
-        <p class="font-semibold font-secondary text-black">Ideas to explore</p>
+        <p class="font-semibold font-secondary text-black">{note?.title}</p>
         </div>
         <div>
         <img class="w-10 h-6 cursor-pointer" src="/svg/dashboard/more.svg" alt="">
         </div>
     </div>
     <div class="flex flex-col gap-0 py-4 my-3 px-8 border-b-2 pb-4">
-        <p class="font-bold text-xl text-black font-primary my-3">Ideas To Explore</p>
+        <p class="font-bold text-xl text-black font-primary my-3">{note?.title}</p>
         <div class="flex gap-14 w-full">
             <div class="">
                 <p class="text-md font-primary font-semibold text-gray-500">Created by</p>
@@ -49,7 +47,7 @@
             </div>
         </div>
     </div>
-    <div class="editor">
-        <Editor height="300px" class="px-3"/>
+    <div class="rounded shadow-lg py-4 px-6 mt-10">
+        {@html note?.content}
     </div>
 </div>
