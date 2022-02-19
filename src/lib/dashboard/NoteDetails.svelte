@@ -1,5 +1,31 @@
 <script>
+import { errorToast, successToast } from "$lib/toastify";
+
+
     export let note;
+    let tag;
+    let addTag = false;
+    async function addNewTag(){
+        addTag = !addTag;
+    const rawResponse = await fetch(
+        "https://unots.herokuapp.com/api/notes/tags/add",
+        {
+          method: "PUT",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({noteId: note.id, tag: tag}),
+        },
+        );
+        const content = await rawResponse.json();
+        if(content.error){
+            errorToast(content.error.details)
+        }
+        else{
+            console.log(content)
+        }
+  }
 </script>
 <div class="px-2 py-2">
     <div class="pb-2 border-b-2 w-full flex justify-between">
@@ -42,8 +68,15 @@
                     <span class="rounded bg-gray-300 px-2.5 py-1 text-black text-sm">Design</span>
                     <span class="rounded bg-gray-300 px-2.5 py-1 text-black text-sm">Productivity</span>
                     <span class="rounded bg-gray-300 px-2.5 py-1 text-black text-sm">Training</span>
-                    <span class="rounded bg-gray-300 px-2.5 py-1 text-black flex text-sm"><img src="/svg/dashboard/add.svg" class="h-4 w-4" alt=""> Add new Tag</span>
-            </div>
+                    {#if !addTag}
+                    <span on:click={()=>{addTag =!addTag}} class="rounded bg-gray-300 px-2.5 py-1 text-black flex text-sm"><img src="/svg/dashboard/add.svg" class="h-4 w-4" alt=""> Add new Tag</span>
+                    {/if}
+                </div>
+                {#if addTag}
+                <form on:submit|preventDefault={addNewTag} class="">
+                    <input type="text" bind:value={tag} class="rounded focus:outline-none border px-2 py-0.5">
+                </form>
+                {/if}
             </div>
         </div>
     </div>
