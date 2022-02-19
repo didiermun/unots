@@ -1,7 +1,6 @@
 <script>
     import NoteCard from "$lib/dashboard/NoteCard.svelte";
     import NoteDetails from "$lib/dashboard/NoteDetails.svelte";
-    import { page } from '$app/stores';
     import { currentUser } from '$lib/store/currentUser';
     import { errorToast } from '$lib/toastify';
     import { goto } from "$app/navigation";
