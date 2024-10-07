@@ -14,7 +14,7 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
-		"@types/cookie": "0.4.1",
+		"@types/cookie": "0.6.0",
 		"@typescript-eslint/eslint-plugin": "5.30.6",
 		"@typescript-eslint/parser": "5.30.6",
 		"autoprefixer": "10.4.7",
@@ -38,6 +38,6 @@
 		"@lukeed/uuid": "2.0.0",
 		"@zerodevx/svelte-toast": "0.7.1",
 		"cl-editor": "2.3.0",
-		"cookie": "0.4.2"
+		"cookie": "0.7.2"
 	}
 }
